@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+#TODO:DUMP SQL REALISATION
+#bin/n98-magerun2 db:dump --stdout "$@"

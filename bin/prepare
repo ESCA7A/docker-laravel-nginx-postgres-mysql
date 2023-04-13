@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cp src/.env.example src/.env
+bin/artisan storage:link
+bin/artisan key:generate
