@@ -1,6 +1,5 @@
 #docker ignore list
 .idea
-src
 infra/mysql/mysql_dbdata
 
 
