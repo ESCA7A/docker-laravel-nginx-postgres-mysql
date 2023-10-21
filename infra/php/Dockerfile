@@ -8,7 +8,10 @@ RUN groupadd -g "$APP_ID" app \
 RUN mkdir -p /etc/nginx/html /var/www/html /sock \
   && chown -R app:app /etc/nginx /var/www /usr/local/etc/php/conf.d /sock
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get -y update
+
+RUN apt-get install -y \
+    libpq-dev \
     cron \
     default-mysql-client \
     git \
@@ -58,7 +61,9 @@ RUN docker-php-ext-configure \
     mysqli \
     opcache \
     pcntl \
+    pdo \
     pdo_mysql \
+    pdo_pgsql \
     soap \
     sockets \
     sodium \

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 # shellcheck source=../env/db.env
-source env/db.env
+source env/psql_db.env
 
 docker compose exec db psql --dbname="${POSTGRES_DB}" --username="${POSTGRES_USER}" "$@"
