@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# создаем директорию проекта
+DIR_SRC=$(ls | grep src)
+
+if [ ${DIR_SRC} != 'src' ]; then
+  mkdir src;
+fi
+
 # перезапускаем контейнеры
 bin/restart
 
