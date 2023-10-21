@@ -1,7 +1,7 @@
 #docker ignore list
 .idea
 infra/mysql/mysql_dbdata
-
+src
 
 #Laravel project
 /vendor/
