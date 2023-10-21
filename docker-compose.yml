@@ -33,7 +33,10 @@ services:
       - ~/.ssh/known_hosts:/var/www/.ssh/known_hosts:cached
       - sockdata:/sock
       - ssldata:/etc/nginx/certs
-    env_file: env/phpfpm.env
+    env_file:
+      - env/phpfpm.env
+      - env/psql_db.env
+      - src/.env
 
 #  db:
 #    image: mariadb:10.4
