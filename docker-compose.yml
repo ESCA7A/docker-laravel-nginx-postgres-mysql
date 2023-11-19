@@ -38,7 +38,17 @@ services:
       - env/psql_db.env
       - src/.env
 
-#  db:
+  redis:
+    image: 'redis:alpine'
+    ports:
+      - '${FORWARD_REDIS_PORT:-6379}:6379'
+    volumes:
+      - './infra/redis:/data'
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+
+
+  #  db:
 #    image: mariadb:10.4
 #    command:
 #      --max_allowed_packet=64M
